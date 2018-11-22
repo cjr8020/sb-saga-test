@@ -48,13 +48,11 @@ public class TestResource {
         () -> System.out.println("Undo Action 4")
     );
 
-    Saga saga = new Saga("test-process")
+    new Saga("test-process")
         .add(processStepOne)
         .add(processStepTwo)
         .add(processStepThree)
-        .add(processStepFour);
-
-    SagaExecutor executor = new SagaExecutor(saga)
+        .add(processStepFour)
         .execute();
 
 
